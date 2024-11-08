@@ -3,7 +3,13 @@ Dewrangle CLI commands
 
 Functions for interacting the Dewrangle's GraphQL and REST APIs
 """
+import logging
+
 import click
+
+from d3b_data_transfer_cli.config.log import init_logger
+
+logger = logging.getLogger(__name__)
 
 
 @click.command()
@@ -17,4 +23,5 @@ def get_study(global_id: str) -> dict:
         \b
         - global_id: the global ID of the study in Dewrangle (e.g. sd-12345678)
     """
-    print(f"Fetch dewrangle study {global_id}!")
+    init_logger()
+    logger.info(f"Fetch dewrangle study {global_id}!")

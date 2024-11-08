@@ -1,0 +1,43 @@
+{
+  "StartAt": "MergeDefaults",
+  "TimeoutSeconds": 259200,
+  "States": {
+    "MergeDefaults": {
+      "Type": "Pass",
+      "Next": "Start Transfer Pipeline",
+      "Parameters": {
+        "merged.$": "States.JsonMerge(States.StringToJson('{\"skip_validation\": false}'), $$.Execution.Input, false)"
+      },
+      "ResultPath": "$.merged"
+    },
+    "Start Transfer Pipeline": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::batch:submitJob.sync",
+      "Parameters": {
+        "JobName": "StartTransferPipeline",
+        "JobQueue": "${batch_job_queue_arn}",
+        "JobDefinition": "${batch_job_definition_arn}",
+        "ContainerOverrides": {
+          "Command": [
+            "dff-transfer-cli --state validateManifest"
+          ]
+        }
+      },
+      "Next": "Notify Success",
+      "ResultPath": null
+    },
+    "Notify Success": {
+      "Type": "Task",
+      "Resource": "${d3b_dff_notifications_arn}",
+      "Parameters": {
+        "input.$": "$",
+        "environment": "${environment}"
+      },
+      "Next": "Success",
+      "ResultPath": "$.ticket_id"
+    },
+    "Success": {
+      "Type": "Succeed"
+    }
+  }
+}

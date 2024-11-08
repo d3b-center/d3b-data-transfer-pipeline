@@ -1,0 +1,35 @@
+[project]
+name = "d3b_data_transfer_cli"
+version = "0.0.1"
+authors = [
+  { name="Alex Sickler", email="sicklera@chop.edu" },
+  { name="Charles Haynes", email="haynescd@chop.edu" },
+  { name="Natasha Singh", email="singhn4@chop.edu" },
+]
+description = "A tool which wraps functions and scripts necessary for data transfers within the D3b organization into a CLI"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache License",
+    "Operating System :: Linux",
+]
+dependencies = [
+  "click==8.1.7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+]
+
+[project.scripts]
+d3b = "d3b_data_transfer_cli.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/d3b-center/d3b-data-transfer-pipeline"
+Issues = "https://github.com/d3b-center/d3b-data-transfer-pipeline/issues"
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"

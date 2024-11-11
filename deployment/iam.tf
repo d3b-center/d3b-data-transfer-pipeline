@@ -106,9 +106,7 @@ data "aws_iam_policy_document" "secrets_service_role_policy" {
     ]
 
     resources = [
-      aws_secretsmanager_secret.dff-pipeline-dbt-deploy-key.id,
-      aws_secretsmanager_secret.dff-pipeline-dbt-profile.id
-
+      aws_secretsmanager_secret.secret.id,
     ]
   }
 }

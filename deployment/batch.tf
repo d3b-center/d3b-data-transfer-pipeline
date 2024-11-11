@@ -84,10 +84,8 @@ resource "aws_batch_job_queue" "default" {
   priority = 1
   state    = "ENABLED"
 
-  compute_environment_order {
-    order               = 1
-    compute_environment = aws_batch_compute_environment.default.arn
-  }
+  compute_environments = [aws_batch_compute_environment.default.arn]
+
 }
 
 locals {

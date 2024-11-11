@@ -5,8 +5,7 @@ resource "aws_sfn_state_machine" "default" {
   name     = "DataTransferPipeline-${var.environment}${local.workspace_suffix}"
   role_arn = aws_iam_role.step_functions_service_role.arn
 
-  definition = templatefile("step-functions/etl.json.tmpl", {
-    slack_notify_arn         = var.slack_notify_arn
+  definition = templatefile("step-functions/step_fn.json.tmpl", {
     environment              = var.environment
     account                  = var.account
     batch_job_definition_arn = aws_batch_job_definition.default.arn

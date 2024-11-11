@@ -19,22 +19,12 @@
         "JobDefinition": "${batch_job_definition_arn}",
         "ContainerOverrides": {
           "Command": [
-            "dff-transfer-cli --state validateManifest"
+            "echo 'Hello'"
           ]
         }
       },
-      "Next": "Notify Success",
-      "ResultPath": null
-    },
-    "Notify Success": {
-      "Type": "Task",
-      "Resource": "${d3b_dff_notifications_arn}",
-      "Parameters": {
-        "input.$": "$",
-        "environment": "${environment}"
-      },
       "Next": "Success",
-      "ResultPath": "$.ticket_id"
+      "ResultPath": null
     },
     "Success": {
       "Type": "Succeed"

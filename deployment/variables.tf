@@ -115,8 +115,3 @@ variable "bastion_public_key" {
   type      = string
   sensitive = true
 }
-
-variable "slack_notify_arn" {
-  type        = string
-  description = "ARN for INFRA to Send Slack Updates"
-}

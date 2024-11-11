@@ -105,7 +105,7 @@ resource "aws_batch_job_definition" "default" {
   name = "${var.project}-${var.environment}${local.workspace_suffix}-job"
   type = "container"
 
-  container_properties = templatefile("${path.module}/job-definitions/etl-pipeline.json.tmpl", {
+  container_properties = templatefile("${path.module}/job-definitions/batch_definition.json.tmpl", {
 
     image_url = "${var.image_name}:${var.image_version}"
 

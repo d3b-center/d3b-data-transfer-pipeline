@@ -36,5 +36,5 @@ Issues = "https://github.com/d3b-center/d3b-data-transfer-pipeline/issues"
 requires = ["setuptools >= 61.0"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools]
-py-modules = []
+[tool.setuptools.packages.find]
+exclude = ["data"]

@@ -25,7 +25,7 @@ jobs:
       - name: 📦 Install deps
         run: |
           cd d3b-data-transfer-cli
-          pip install black==23.9.1 
+          pip install black==24.10.0
 
       - name: 🚨 Lint code 
         run: |

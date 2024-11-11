@@ -3,6 +3,7 @@ Dewrangle CLI commands
 
 Functions for interacting the Dewrangle's GraphQL and REST APIs
 """
+
 import logging
 
 import click

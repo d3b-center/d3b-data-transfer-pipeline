@@ -3,6 +3,7 @@ Entrypoint for the CLI
 
 All commands are initialized here
 """
+
 import click
 from d3b_data_transfer_cli.cli.dewrangle import *
 

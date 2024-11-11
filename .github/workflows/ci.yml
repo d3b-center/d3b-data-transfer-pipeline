@@ -79,6 +79,7 @@ jobs:
           source venv/bin/activate
           pip install -e .
           pip install .[dev]
+          d3b --help
 
       - name: ✅ Test
         run: | 

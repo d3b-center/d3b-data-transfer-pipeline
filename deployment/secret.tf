@@ -5,6 +5,7 @@ locals {
   )
 }
 
+# Create Secrets in SecretManager
 resource "aws_secretsmanager_secret" "secret" {
   name                    = "${local.secrets_prefix}/secrets"
   description             = "D3B Data Transfer Pipeline Secrets"

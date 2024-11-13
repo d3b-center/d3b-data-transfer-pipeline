@@ -35,18 +35,18 @@ All commits are pre-prepended with a standard emoji.
 
 ### Commit Standards 
 
-| Short Code          | Definition    | Renders As |
-----------------------| ------------  |------------|
-|:sparkles:           | New Feature   |     ✨     |
-|:refactor:           | Refactor      |     ♻️      |
-|:bug:                | Bug           |     🐛     |
-|:memo:               | Documentation |     📝     |
-|:white_check_mark:   | Testing       |     ✅     |
-|:construction_worker:| DevOps        |     👷     |
+| Short Code            | Definition    | Renders As |
+----------------------  | ------------  |------------|
+|`:sparkles:`           | New Feature   |     ✨     |
+|`:recycle:`            | Refactor      |     ♻️      |
+|`:bug:`                | Bug           |     🐛     |
+|`:memo:`               | Documentation |     📝     |
+|`:white_check_mark:`   | Testing       |     ✅     |
+|`:construction_worker:`| DevOps        |     👷     |
 
 
 When commits are pushed to Github, Github renders them as emojis. This makes it 
-easy to visually browser through commit history and get a quick idea of the 
+easy to visually browse through commit history and get a quick idea of the 
 type of changes made. Additionally, git logs can be easily searched or
 processed by searching for commits by short code.
 
@@ -99,7 +99,7 @@ Similar to commit messages, you should prefix the PR title with the appropriate 
 that relates to the type of change it is (feature, refactor, etc). 
 
 For example:
-**:sparkles: Add new jira cmd to cli**
+**`:sparkles: Add new jira cmd to cli`**
 
 Which renders as:
 **✨ Add new jira cmd to cli**

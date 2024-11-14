@@ -8,7 +8,7 @@ authors = [
 ]
 description = "A tool which wraps functions and scripts necessary for data transfers within the D3b organization into a CLI"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: Apache License",

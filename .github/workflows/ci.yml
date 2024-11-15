@@ -1,9 +1,8 @@
-
-name: ✅ CI 
+name: ✅ CI
 
 on:
   pull_request:
-    types: [opened, reopened, edited, synchronize, closed] 
+    types: [opened, reopened, edited, synchronize, closed]
 
 concurrency:
   group: ci-${{ github.event.pull_request.number || github.ref }}
@@ -20,14 +19,14 @@ jobs:
       - name: 🐍 Setup Python
         uses: actions/setup-python@v3
         with:
-          python-version: '3.11'
+          python-version: "3.12"
 
       - name: 📦 Install deps
         run: |
           cd d3b-data-transfer-cli
           pip install black==24.10.0
 
-      - name: 🚨 Lint code 
+      - name: 🚨 Lint code
         run: |
           cd d3b-data-transfer-cli
           black --check --line-length 80 tests d3b_data_transfer_cli
@@ -42,7 +41,7 @@ jobs:
       - name: 🐍 Setup Python
         uses: actions/setup-python@v3
         with:
-          python-version: '3.11'
+          python-version: "3.12"
 
       - name: 📦 Install deps
         run: |
@@ -54,10 +53,10 @@ jobs:
           pip install .[dev]
 
       - name: ✅ Test
-        run: | 
+        run: |
           cd d3b-data-transfer-cli
           source venv/bin/activate
-          pytest --show-capture={no,stdout,stderr} ./tests/unit 
+          pytest --show-capture={no,stdout,stderr} ./tests/unit
 
   integration-test:
     runs-on: ubuntu-20.04
@@ -69,7 +68,7 @@ jobs:
       - name: 🐍 Setup Python
         uses: actions/setup-python@v3
         with:
-          python-version: '3.11'
+          python-version: "3.12"
 
       - name: 📦 Install deps
         run: |
@@ -82,8 +81,7 @@ jobs:
           d3b --help
 
       - name: ✅ Test
-        run: | 
+        run: |
           cd d3b-data-transfer-cli
           source venv/bin/activate
           pytest --show-capture={no,stdout,stderr} ./tests/integration
-

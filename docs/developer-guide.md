@@ -3,16 +3,15 @@
 
 ## Background
 
-
 ## 💻 Setup Environment
 
-This guide is for setting up the Python development environment needed to 
-develop the CLI which is where all of the code for the data transfer 
+This guide is for setting up the Python development environment needed to
+develop the CLI which is where all of the code for the data transfer
 pipeline lives.
 
 ### Install Python
 
-This project has been tested with Python 3.11. Since there are many versions
+This project has been tested with Python 3.12.* Since there are many versions
 of Python being used for various projects in D3b, it is a good idea to use
 [pyenv](https://realpython.com/intro-to-pyenv/) to manage python versions and
 virtual environments.
@@ -23,8 +22,8 @@ to install pyenv.
 Next install python using pyenv:
 
 ```shell
-# install latest version of python 3.11
-$ pyenv install -v 3.11.8
+# install latest version of python 3.12
+$ pyenv install -v 3.12
 ```
 
 ### Get Source Code
@@ -34,7 +33,7 @@ package, and install all of the necessary Python dependencies.
 
 ```shell
 git clone git@github.com:d3b-center/d3b-data-transfer-pipeline.git
-cd d3b-data-transfer-pipeline 
+cd d3b-data-transfer-pipeline
 cd d3b-data-transfer-cli
 ```
 
@@ -44,8 +43,8 @@ Next we need to create an isolated environment for our dependencies. For this
 we will use pyenv to create a virtualenv with the right version Python.
 
 ```shell
-# create virtualenv using python 3.11
-$ pyenv virtualenv 3.11.8 d3b-data-transfer-venv
+# create virtualenv using python 3.12
+$ pyenv virtualenv 3.12 d3b-data-transfer-venv
 ```
 
 ```shell
@@ -111,4 +110,3 @@ You should see something like the following.
 All done! ✨ 🍰 ✨
 2 files reformatted, 170 files left unchanged.
 ```
-
